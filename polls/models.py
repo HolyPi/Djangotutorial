@@ -1,5 +1,4 @@
 import datetime
-
 from django.db import models
 from django.utils import timezone
 
@@ -9,7 +8,7 @@ class Person(models.Model):
 
     def __str__(self):
         return self.name
-        
+
 class Group(models.Model):
     name= models.CharField(max_length=128)
     members = models.ManyToManyField(Person, through="Membership")
